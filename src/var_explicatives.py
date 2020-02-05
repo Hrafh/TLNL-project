@@ -2,7 +2,7 @@ import numpy as np
 from conllu import parse_incr
 
 
-def richess_lexicale(train):
+def lexical_richness(train):
   sequences = []
   for tokenlist in parse_incr(train):  
     sequences.append(tokenlist)  
@@ -251,7 +251,7 @@ def mean_dependencies_cc(train):
     return np.mean(length_dependencies)
     
 
-def tx_non_proj(train):
+def non_projectivity_rate(train):
   sequences = []
   for tokenlist in parse_incr(train):  
     sequences.append(tokenlist)  
@@ -285,7 +285,7 @@ def tx_non_proj(train):
   return float(non_proj/taille)
   
 
-def nb_mots_par_phrase(train):
+def words_per_sentences(train):
   sequences = []
   for tokenlist in parse_incr(train):  
     sequences.append(tokenlist)  
@@ -309,7 +309,7 @@ def nb_mots_par_phrase(train):
   # return float(cpt/taille)
   
   
-def richesse_morpho(train):
+def morphological_richness(train):
   sequences = []
   for tokenlist in parse_incr(train):  
     sequences.append(tokenlist)  

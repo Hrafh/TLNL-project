@@ -13,6 +13,9 @@ y = np.array([64.28, 73.40, 72.06, 63.84, 68.12, 72.55, 67.18, 66.93, 64.76, 58.
 
 langues = ['ar','bg','ca','cs','da','el','en','es','et','eu','fa','fi','fr','ga','he','hi','hr','hu','id','it','ja','ko','lv','nl','no','pl','pt','ro','ru','sl','sv','tr','uk','ur','vi','zh']
 
+nom_variables = ['lexical_richness', 'part_of_adp_case', 'mean_length_dependencies', 'nb_sentences', 'dep_noun', 'dep_verb', 'mean_dependencies_case', 
+				 'mean_dependencies_amod', 'mean_dependencies_flat', 'mean_dependencies_obj', 'mean_dependencies_clf', 'mean_dependencies_mark', 
+				 'mean_dependencies_cc', 'non_projectivity_rate', 'words_per_sentences', 'morphological_richness', 'nb_noun', 'dep_adv', 'dep_det', 'dep_discourse']
 
 def open_files():
   ar_train = open("corpus_equilibre/ar/ar_train.conllu", "r", encoding="utf-8")
@@ -88,8 +91,8 @@ def plot(X, y_pred, i):
   #plt.scatter(X_test, y_test, color = 'red')
   plt.scatter(X, y, color = 'blue')
   plt.plot(X, y_pred, color = 'red')
-  plt.title('Variable {} related to score LAS'.format(i))
-  plt.xlabel('Variable {}'.format(i))
+  plt.title('{} (Var {}) related to score LAS'.format(nom_variables[i],i))
+  plt.xlabel('{} (Var {})'.format(nom_variables[i],i))
   plt.ylabel('LAS')
   for i in range (len(X)):
     plt.text(X[i],y[i]+0.5,langues[i])
